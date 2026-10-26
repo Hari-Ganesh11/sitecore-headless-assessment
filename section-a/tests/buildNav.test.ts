@@ -23,6 +23,32 @@ describe("buildNav", () => {
 
     expect(orphans.map((item) => item.id)).toEqual(["8"]);
   });
+  it("sorts siblings by sort order and title", () => {
+    const { tree } = buildNav(navItems, 10);
+
+    expect(tree[0]?.children.map((item) => item.title)).toEqual([
+      "About",
+      "Services",
+    ]);
+    expect(
+      tree[0]?.children
+        .find((item) => item.title === "Services")
+        ?.children.map((item) => item.title)
+    ).toEqual(["Cardiology", "Oncology"]);
+  });
+
+  it("excludes hidden items and their descendants",()=>{
+    const {tree} = buildNav(navItems,10);
+    const about = tree[0]?.children.find((items)=>items.title === "About");
+    expect(about?.children).toEqual([]);
+  })
+
+  it("limits the tree to the requested depth", () => {
+    const {tree} = buildNav(navItems,1);
+
+    expect(tree[0]?.title).toBe("Home");
+    expect(tree[0]?.children).toEqual([]);
+  })
 });
 
 describe("getBreadcrumb", () => {
@@ -30,7 +56,10 @@ describe("getBreadcrumb", () => {
     expect(getBreadcrumb(navItems, "/services/cardiology")).toEqual([
       "Home",
       "Services",
-      "Cardiology"
+      "Cardiology",
     ]);
   });
+  it("returns an empty array for an unknown path",()=>{
+    expect(getBreadcrumb(navItems,"/unknown")).toEqual([]);
+  })
 });
