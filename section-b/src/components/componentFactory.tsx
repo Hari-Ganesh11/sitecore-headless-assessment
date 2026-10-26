@@ -6,6 +6,33 @@
  *
  * TODO: implement, and register your components here as you build them.
  */
-export function getComponent(componentName: string) {
+import type { ComponentType } from "react";
+import type { ComponentRendering } from "@/lib/types";
+import Hero from "./Hero";
+import TwoColumn from "./TwoColumn";
+import RichTextBlock from "./RichTextBlock";
+import DoctorList from "./DoctorList";
+import ArticleListing from "./ArticleListing";
+
+type SitecoreComponentProps={
+  rendering: ComponentRendering;
+};
+
+const componentMap : Record<
+string,
+ComponentType<SitecoreComponentProps>
+> ={
+  Hero,
+  TwoColumn,
+  RichTextBlock,
+  DoctorList,
+  ArticleListing,
+};
+
+export function getComponent(componentName: string):ComponentType<SitecoreComponentProps>|undefined {
+  if (Object.hasOwn(componentMap, componentName)) {
+    return componentMap[componentName];
+  }
+
   return undefined;
 }
