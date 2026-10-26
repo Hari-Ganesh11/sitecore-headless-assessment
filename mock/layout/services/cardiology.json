@@ -1,0 +1,77 @@
+{
+  "sitecore": {
+    "context": {
+      "pageEditing": false,
+      "site": { "name": "hospital" },
+      "language": "en",
+      "itemPath": "/services/cardiology"
+    },
+    "route": {
+      "name": "cardiology",
+      "itemId": "8f1c2a4e-1b2d-4c3e-9f10-aa11bb22cc33",
+      "templateName": "Service Page",
+      "fields": {
+        "pageTitle": { "value": "Cardiology Services" },
+        "metaDescription": { "value": "Heart care, diagnostics and cardiac surgery." }
+      },
+      "placeholders": {
+        "headless-main": [
+          {
+            "uid": "c1",
+            "componentName": "Hero",
+            "dataSource": "{A1B2C3D4-0000-0000-0000-000000000001}",
+            "params": { "theme": "dark" },
+            "fields": {
+              "heading": { "value": "Heart care close to home" },
+              "subheading": { "value": "" },
+              "image": { "value": { "src": "/img/heart.jpg", "alt": "", "width": "1200", "height": "600" } },
+              "cta": { "value": { "href": "/appointments", "text": "Book an appointment", "linkType": "internal" } }
+            }
+          },
+          {
+            "uid": "c2",
+            "componentName": "TwoColumn",
+            "params": { "DynamicPlaceholderId": "1" },
+            "placeholders": {
+              "column-left-1": [
+                {
+                  "uid": "c3",
+                  "componentName": "RichTextBlock",
+                  "fields": {
+                    "text": { "value": "<h2>Our approach</h2><p>We treat the <strong>whole patient</strong>.</p><script>alert('x')</script>" }
+                  }
+                }
+              ],
+              "column-right-1": [
+                {
+                  "uid": "c4",
+                  "componentName": "DoctorList",
+                  "fields": {
+                    "data": {
+                      "datasource": {
+                        "title": { "jsonValue": { "value": "Our cardiologists" } },
+                        "children": {
+                          "results": [
+                            { "id": "d1", "name": { "jsonValue": { "value": "Dr. Anita Rao" } }, "specialty": { "jsonValue": { "value": "Interventional Cardiology" } }, "photo": { "jsonValue": { "value": { "src": "/img/rao.jpg", "alt": "Dr. Anita Rao" } } } },
+                            { "id": "d2", "name": { "jsonValue": { "value": "Dr. Vikram Shah" } }, "specialty": { "jsonValue": { "value": "" } }, "photo": { "jsonValue": { "value": {} } } }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                },
+                { "uid": "c5", "componentName": "LegacyWidget", "fields": {} }
+              ]
+            }
+          },
+          {
+            "uid": "c6",
+            "componentName": "ArticleListing",
+            "params": { "pageSize": "3", "tag": "cardiology" },
+            "fields": { "heading": { "value": "Latest from our heart team" } }
+          }
+        ]
+      }
+    }
+  }
+}

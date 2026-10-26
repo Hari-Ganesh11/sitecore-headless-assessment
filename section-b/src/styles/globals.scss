@@ -1,0 +1,44 @@
+// Minimal baseline. Visual polish is not graded — but the page should be
+// readable, work down to 360px, and have visible focus states.
+//
+// Add your own component styles alongside this (BEM, CSS modules, whatever
+// you'd normally reach for) and say why in your NOTES.md.
+
+:root {
+  --color-text: #15181d;
+  --color-muted: #5b6472;
+  --color-bg: #ffffff;
+  --color-surface: #f4f6f8;
+  --color-accent: #0b5cab;
+  --space: 1rem;
+  --measure: 70ch;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: var(--space);
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.55;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}

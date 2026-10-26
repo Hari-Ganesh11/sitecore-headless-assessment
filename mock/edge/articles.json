@@ -1,0 +1,13 @@
+{
+  "data": {
+    "search": {
+      "total": 7,
+      "pageInfo": { "endCursor": "Mw==", "hasNext": true },
+      "results": [
+        { "id": "a1", "url": { "path": "/news/new-cath-lab" }, "title": { "value": "New cath lab opens" }, "publishDate": { "value": "2026-08-02T00:00:00Z" } },
+        { "id": "a2", "url": { "path": "/news/heart-month" }, "title": { "value": "Heart health month" }, "publishDate": { "value": "2026-07-15T00:00:00Z" } },
+        { "id": "a3", "url": { "path": "/news/tavr" }, "title": { "value": "What is TAVR?" }, "publishDate": { "value": "2026-06-30T00:00:00Z" } }
+      ]
+    }
+  }
+}

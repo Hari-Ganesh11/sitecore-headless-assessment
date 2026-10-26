@@ -1,0 +1,17 @@
+{
+  "name": "section-a",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Section A — logic building. Plain TypeScript, no frameworks.",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8"
+  }
+}
